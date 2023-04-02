@@ -4,7 +4,7 @@ O Pimenta Doc é um projeto simples mas extremamente funcional para quem não te
 de edição de texto.
 Ele funciona apenas como uma camada de abstração dos dados para os editores. Então, boa noticia! Você vai poder utilizar seu Vim, seu Emacs e até mesmo seu Writer para edição de texto de maneira muito mais organizada agora.
 
-## Funcionamento
+## Funcionamento Geral
 
 Todo o programa se alinha da seguinte forma:
 
@@ -14,3 +14,7 @@ Todo o programa se alinha da seguinte forma:
 - Caso o token seja compativel com os dados requisitados, a API envia as informações para o usuário.
 
 ![abstracao_comunicacao_pimentadoc](https://user-images.githubusercontent.com/76849605/225711640-d6c62f6c-9c8e-46f1-975d-85a167b2a3c0.svg)
+
+## Escritas de Desenvolvimento
+
+Para uma explicação mais aprofundada do funcionamento do pimenta-doc e sua documentação de desenvolvimento (Ex.: diagramas do banco), por favor acesse o [pages do projeto](https://lzunho-afk.github.io/pimenta-doc).
