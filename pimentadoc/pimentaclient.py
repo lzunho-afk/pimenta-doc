@@ -20,21 +20,26 @@ class PimentaClient:
     buffer_size = 1024
     
     def __init__(self, server_addr=("127.0.0.1", 8080)):
-        """ Construtor da Classe Cliente do Pimentadoc.
-
-        :param server_addr: Tupla com o endereço e porta do PimentaServer.
+        """
+        Armazena o endereço do servidor e envia um ECHO.
+        
+        Args:
+            server_addr (tupla): Endereço e porta do PimentaServer.
         """
         self.server_addr = server_addr
         self.echo_msg(self.server_addr)
 
     @staticmethod
     def echo_msg(addr, msg="ECHO Teste de conexão. Retorne 'ACK'."):
-        """ Envia uma mensagem de ECHO para o endereço especificado.
+        """
+        Envia uma mensagem de ECHO para o endereço especificado.
 
-        :param addr: Tupla com endereço e porta do servidor.
-        :param msg: Mensagem a ser enviada.
+        Args:
+            addr (tupla): Tupla com endereço e porta do servidor.
+            msg (string): Mensagem a ser enviada.
 
-        :returns: 'True' para sucesso e 'False' para falha.
+        Returns:
+            Booleano: 'True' para sucesso e 'False' para falha.
         """
         return_code = True
 

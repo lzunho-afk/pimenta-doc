@@ -24,6 +24,9 @@ from arghandlers import *
 D_HANDLERS_PATH = os.path.realpath(os.path.dirname(__file__)) + "/default_handlers"
 
 def main():
+    """
+    Analisa os argumentos de entrada & inicializa o módulo de servidor/cliente
+    """
     global D_HANDLERS_PATH
     argp = argparse.ArgumentParser(prog="pimenta-doc", description="software gerenciador básico de serviços e usuários")
     sargp = argp.add_subparsers(dest="exec_mode", help="Painel de ajuda: Escolha de modos Servidor-Cliente")

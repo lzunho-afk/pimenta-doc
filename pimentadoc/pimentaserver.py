@@ -21,8 +21,13 @@ import socketserver
 import glob
 
 class ThreadedServerHandler(socketserver.BaseRequestHandler):
-    """ Manipulador de requisições TCP """
     def handle(self, buffer_size):
+        """
+        Recebe o buffer e devolve um ECHO
+
+        Args:
+        	buffer_size (int): Tamanho do buffer a ser recebido.
+        """
         data = self.request.recv(buffer_size)
         current_thread = threading.current_thread()
         res = "{}: {}".format(current_thread, data)
@@ -36,10 +41,11 @@ class PimentaServer:
     handlers_list = []
     
     def __init__(self, address=("localhost", 0)):
-        """ Construtor da classe PimentaServer.
+        """
         Inicializa o thread do serviço mestre e inicializa o handler dele.
-        
-        :param address: Tupla com os valores de endereço do servidor.
+
+        Args:
+            address (tupla): Valores de endereço do servidor.
         """
         self.server = ThreadedServer(address, ThreadedServerHandler)
         self.host, self.port = self.server.server_address
@@ -51,8 +57,11 @@ class PimentaServer:
         #print("\t~> Inicializando 'slaves' \{\n{}\n\}".format(self.start_side_services()))
 
     def load_service_handlers(directory):
-        """ Carrega todos os phandlers de determinado diretório para o contexto de serviços do Servidor.
-        :param directory: Caminho para o diretório com os arquivos '.phandler' (String).
+        """
+        Carrega todos os phandlers de determinado diretório para o contexto de serviços do Servidor.
+
+        Args:
+        	directory (str): Caminho para o diretório com os arquivos '.phandler' (String).
         """
         print("[Handlers] Loading from '{}'".format(directory))
         for handler_path in glob.glob(directory + '/**/*.phandler', recursive=True):
@@ -61,8 +70,13 @@ class PimentaServer:
                 print("\t~> {}... Done.".format(handler_path))
 
     def handler_create_service(handler_text):
-        """ Cria um serviço a partir do texto de phandler.
-        :param handler: Texto integral do arquivo '.phandler' (String List).
-        :returns: 'False' caso não seja possível a criação e 'True' caso contrário.
+        """
+        Cria um serviço a partir do texto de phandler.
+
+        Args:
+        	handler (str[]): Texto integral do arquivo '.phandler'.
+
+        Returns:
+        	'False' caso não seja possível a criação e 'True' caso contrário.
         """
         pass
